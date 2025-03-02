@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Text Category Classifier</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>Text Category Classifier</h1>
+        <p>Enter a text to classify it as either about baseball or medical content.</p>
+        
+        <form method="POST">
+            <textarea name="text" rows="5" cols="50" placeholder="Enter text here...">{{ text }}</textarea>
+            <button type="submit">Analyze</button>
+        </form>
+        
+        {% if result %}
+        <div class="result">
+            <h2>Analysis Result</h2>
+            <p><strong>Category:</strong> {{ result.category }}</p>
+            <p><strong>Confidence:</strong> {{ "%.2f"|format(result.confidence*100) }}%</p>
+            
+            <div class="probabilities">
+                <div class="prob-bar">
+                    <div class="prob-label">Baseball:</div>
+                    <div class="prob-value" style="width: {{ result.baseball_probability*100 }}%;">
+                        {{ "%.2f"|format(result.baseball_probability*100) }}%
+                    </div>
+                </div>
+                <div class="prob-bar">
+                    <div class="prob-label">Medical:</div>
+                    <div class="prob-value" style="width: {{ result.medical_probability*100 }}%;">
+                        {{ "%.2f"|format(result.medical_probability*100) }}%
+                    </div>
+                </div>
+            </div>
+        </div>
+        {% endif %}
+    </div>
+</body>
+</html>

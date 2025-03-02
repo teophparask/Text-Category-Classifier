@@ -1,0 +1,77 @@
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+}
+
+.container {
+    width: 80%;
+    margin: 30px auto;
+    padding: 20px;
+    background: white;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+h1 {
+    color: #333;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-family: Arial, sans-serif;
+}
+
+button {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    background: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    margin-bottom: 20px;
+}
+
+button:hover {
+    background: #45a049;
+}
+
+.result {
+    background: #f9f9f9;
+    padding: 15px;
+    border-radius: 5px;
+    border-left: 5px solid #4CAF50;
+}
+
+.probabilities {
+    margin-top: 20px;
+}
+
+.prob-bar {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.prob-label {
+    width: 100px;
+}
+
+.prob-value {
+    background-color: #4CAF50;
+    color: white;
+    text-align: center;
+    padding: 5px 0;
+    border-radius: 3px;
+}
